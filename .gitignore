@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CRMCore/bin/Debug/net6.0
+/.vs
+/CRMCore/obj
+/CRMCore.Application/bin/Debug/net6.0
+/CRMCore.Application/obj
+/CRMCore.EntityFrameWorkCore/bin/Debug/net6.0
+/CRMCore.EntityFrameWorkCore/obj/Debug/net6.0
