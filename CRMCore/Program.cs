@@ -1,3 +1,7 @@
+using CRMCore.Application.Interface.Contacts;
+using CRMCore.Application.Interface.Users;
+using CRMCore.Application.Repository.Contacts;
+using CRMCore.Application.Repository.Users;
 using CRMCore.EntityFrameWorkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,7 +30,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 // Register interface and classes
-//builder.Services.AddScoped<IContactRepository, ContatRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
 
 
 builder.Services.AddCors(options =>

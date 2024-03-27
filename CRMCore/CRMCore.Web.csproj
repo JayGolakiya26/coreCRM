@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CRMCore.Application\CRMCore.Application.csproj" />
     <ProjectReference Include="..\CRMCore.EntityFrameWorkCore\CRMCore.EntityFrameWorkCore.csproj" />
   </ItemGroup>
 
