@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cp3IY1jMqjmzOul4VblNdkfAFMcthvj0d6ujSpNhBug=",
+  "Source": "CRMCore.Web",
+  "BasePath": "_content/CRMCore.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
