@@ -1,35 +1,35 @@
 import { ConfigProvider, Dropdown, Layout, Modal, message, theme } from 'antd';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Sidebar from './Components/Sidebar';
-import { CompassOutlined, DownOutlined, UserOutlined } from '@ant-design/icons';
+import { SiCivicrm } from "react-icons/si";
 import MainRoutes from './Routes';
 
 const Layouts = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { Header, Content, Sider } = Layout;
     const {
         token: { colorBgContainer },
     } = theme.useToken();
     const [collapsed, setCollapsed] = useState(false);
 
-    const showDeleteConfirm = () => {
-        Modal.confirm({
-            title: `Logout`,
-            content: 'Are you sure you want to Logout?',
-            okText: 'Logout',
-            okType: 'danger',
-            onOk: async () => {
-                // setUser(null);
-                // setUserId('');
-                localStorage.clear();
-                navigate('/login');
-                message.success('You are successfully logout.');
-            },
-            onCancel() { },
-        });
-    };
+    // const showDeleteConfirm = () => {
+    //     Modal.confirm({
+    //         title: `Logout`,
+    //         content: 'Are you sure you want to Logout?',
+    //         okText: 'Logout',
+    //         okType: 'danger',
+    //         onOk: async () => {
+    //             // setUser(null);
+    //             // setUserId('');
+    //             localStorage.clear();
+    //             navigate('/login');
+    //             message.success('You are successfully logout.');
+    //         },
+    //         onCancel() { },
+    //     });
+    // };
 
     const items = [
         {
@@ -50,7 +50,7 @@ const Layouts = () => {
 
     const handleMenuClick = (e) => {
         if (e.key === 'logout') {
-            showDeleteConfirm();
+            // showDeleteConfirm();
         }
         if (e.key === 'changePassword') {
             // setChangePasswordModalOpen(true);
@@ -84,24 +84,8 @@ const Layouts = () => {
                     >
                         <div className='navbar d-flex-between'>
                             <div className='d-flex-between'>
-                                {/* <img src={logo} className="logoIcon" alt="logo" /> */}
-                                <CompassOutlined className='logoIcon' /><h2>CRM</h2>
+                                <SiCivicrm className='logoIcon' />&nbsp;<h2>CRM</h2>
                             </div>
-                            {/* {user && */}
-                                <Dropdown menu={{ items }} >
-                                    {/* {(isMobile && !isDesktop && !isTablet) ? */}
-                                        <div className='userProfileDiv'>
-                                            <UserOutlined className='userIcon' />
-                                        </div>
-                                        :
-                                        <div className='userProfileDiv'>
-                                            <UserOutlined className='userIcon' />
-                                                {/* {JSON.parse(currUserData)?.profile?.displayName} */}
-                                            <DownOutlined className='userDownArrow' />
-                                        </div>
-                                    {/* } */}
-                                </Dropdown>
-                            {/* } */}
                         </div>
                     </Header>
                     <Layout>
@@ -122,7 +106,9 @@ const Layouts = () => {
                                 background: colorBgContainer,
                             }}
                         >
-                            <MainRoutes />
+                            <div className='mainInsideDiv'>
+                                <MainRoutes />
+                            </div>
                         </Content>
                     </Layout>
                 </Layout>

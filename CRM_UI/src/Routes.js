@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login';
+import Contact from './Pages/Contact';
+import Account from './Pages/Account';
+import Task from './Pages/Task';
+import Lead from './Pages/Lead';
+import Opportunity from './Pages/Opportunity';
+import Dashboard from './Pages/Dashboard';
 
 const MainRoutes = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     // const handleWindowSizeChange = () => {
     //     setIsMobile(window.innerWidth <= 481);
@@ -22,9 +28,13 @@ const MainRoutes = () => {
     return (
         <div>
             <Routes>
-                {/* <Route path='/login' element={user ? <Dashboard /> : <Login />} /> */}
+                <Route path='/' element={<Dashboard />} />
                 <Route path='/login' element={<Login />} />
-                {/* <Route path='/dashboard' element={<ProtectedRoute user={user}><Dashboard /></ProtectedRoute>} /> */}
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/account' element={<Account />} />
+                <Route path='/task' element={<Task />} />
+                <Route path='/lead' element={<Lead />} />
+                <Route path='/opportunity' element={<Opportunity />} />
             </Routes>
         </div>
     );

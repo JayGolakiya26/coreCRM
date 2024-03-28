@@ -1,7 +1,10 @@
-import { FileAddOutlined, HomeOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AccountBookOutlined, ContactsOutlined, HomeOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { FaTasks } from "react-icons/fa";
+import { SiGoogleads } from "react-icons/si";
+import { TbBrandMyOppo } from "react-icons/tb";
 
 const Sidebar = () => {
 
@@ -9,12 +12,12 @@ const Sidebar = () => {
     const [menuItems, setMenuItems] = useState([]);
     const [defaultActiveBar, setDefaultActiveBar] = useState('');
 
-    // useEffect(() => {
-    //     if (window.location.href.endsWith('/')) setDefaultActiveBar('');
-    //     if (window.location.href.endsWith('/settings')) setDefaultActiveBar('settings');
-    //     if (window.location.href.endsWith('/share-post')) setDefaultActiveBar('share-post');
-    //     setSiderMenuItems();
-    // }, []);
+    useEffect(() => {
+        // if (window.location.href.endsWith('/')) setDefaultActiveBar('');
+        // if (window.location.href.endsWith('/settings')) setDefaultActiveBar('settings');
+        if (window.location.href.endsWith('/contact')) setDefaultActiveBar('contact');
+        setSiderMenuItems();
+    }, []);
 
     const getItem = (label, key, icon, children) => {
         return { key, icon, children, label };
@@ -27,9 +30,11 @@ const Sidebar = () => {
     const setSiderMenuItems = () => {
         let items = [
             getItem('Dashboard', '', <HomeOutlined />),
-            getItem('Overview', 'overview', <MailOutlined />),
-            getItem('Share Post', 'share-post', <FileAddOutlined />),
-            getItem('Settings', 'settings', <SettingOutlined />)
+            getItem('Contacts', 'contact', <ContactsOutlined />),
+            getItem('Accounts', 'account', <AccountBookOutlined />),
+            getItem('Tasks', 'task', <FaTasks />),
+            getItem('Leads', 'lead', <SiGoogleads />),
+            getItem('Opportunities', 'opportunity', <TbBrandMyOppo />)
         ];
         setMenuItems(items);
     };
